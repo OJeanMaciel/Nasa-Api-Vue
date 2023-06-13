@@ -1,34 +1,16 @@
 <template>
   <div>
     <button @click="getMarsWeather">Obter dados do clima em Marte</button>
-    <div v-if="weatherData">
-      <h2>Dados do Clima em Marte:</h2>
-      <div v-if="weatherData.sol_keys.length > 0">
-        <div v-for="solKey in weatherData.sol_keys" :key="solKey">
-          <h3>Sol {{ solKey }}:</h3>
-          <div>
-            <h4>Temperatura:</h4>
-            <p>Average: {{ weatherData[solKey].AT.av }}°C</p>
-            <p>Minimum: {{ weatherData[solKey].AT.mn }}°C</p>
-            <p>Maximum: {{ weatherData[solKey].AT.mx }}°C</p>
-          </div>
-          <div>
-            <h4>Pressão:</h4>
-            <p>Average: {{ weatherData[solKey].PRE.av }} Pa</p>
-            <p>Minimum: {{ weatherData[solKey].PRE.mn }} Pa</p>
-            <p>Maximum: {{ weatherData[solKey].PRE.mx }} Pa</p>
-          </div>
-          <div>
-            <h4>Velocidade do Vento:</h4>
-            <p>Average: {{ weatherData[solKey].HWS.av }} m/s</p>
-            <p>Minimum: {{ weatherData[solKey].HWS.mn }} m/s</p>
-            <p>Maximum: {{ weatherData[solKey].HWS.mx }} m/s</p>
-          </div>
-        </div>
-      </div>
-      <div v-else>
-        <p>Nenhum dado de clima disponível para Marte.</p>
-      </div>
+
+    <div class="container" v-if="weatherData">
+      <h2>Resultados:</h2>
+      <ul>
+        <li v-for="result in weatherData.results" :key="result[0]">
+          <h3>{{ result[2] }}</h3>
+          <p>{{ result[3] }}</p>
+        <img :src="result[10]" :alt="result[1]" />
+        </li>
+      </ul>
     </div>
   </div>
 </template>
@@ -62,3 +44,11 @@ export default {
   },
 };
 </script>
+
+
+<style scoped>
+  .container {
+    color: #fff;
+  }
+
+</style>
