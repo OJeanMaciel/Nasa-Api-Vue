@@ -1,5 +1,7 @@
 <script setup>
   import logo from '../assets/logo.png';
+  import { UserOutlined } from '@ant-design/icons-vue';
+
 </script>
 
 <template>
@@ -11,10 +13,15 @@
           <router-link class="item" to="/">Marte</router-link>
         </li>
         <li>
-          <router-link class="item" to="/system">Sistema Solar</router-link>
+          <router-link class="item" to="/system">Aeronaves</router-link>
         </li>
         <li>
           <router-link class="item" to="/about">Sobre</router-link>
+        </li>
+        <li>
+          <router-link class="item" to="/login">
+            <user-outlined />
+          </router-link>
         </li>
       </ul>
     </div>
