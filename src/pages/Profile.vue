@@ -10,11 +10,10 @@
         <label for="email">E-mail:</label>
         <input type="text" id="email" v-model="email">
         
-        <label for="password">Senha:</label>
+        <label for="password">Nova Senha:</label>
         <input type="password" id="password" v-model="password">
       </div>
-
-      <button>Texto</button>
+      <a-button class="button" type="primary">Confirmar</a-button>
     </div>
   </template>
   
@@ -75,5 +74,10 @@
     border: 1px solid #ccc;
     object-fit: cover;
   }
+  
+  .button{
+    margin-top: 20px;
+  }
+
   </style>
   

@@ -2,10 +2,11 @@ import { createApp } from 'vue'
 import './style.css'
 import { createRouter, createWebHistory } from 'vue-router';
 import App from './App.vue'
+import Antd from 'ant-design-vue';
 
 import Home from './pages/Home.vue';
 import System from './pages/System.vue';
-import Login from './pages/Login.vue';
+import Profile from './pages/Profile.vue';
 import About from './pages/About.vue';
 
 const routes = [
@@ -20,9 +21,9 @@ const routes = [
         component: System
     },
     {
-      path: '/login',
-      name: 'Login',
-      component: Login
+      path: '/profile',
+      name: 'Profile',
+      component: Profile
     },
     {
         path: '/about',
@@ -38,7 +39,7 @@ const router = createRouter({
 });
 
 // Crie a instância do aplicativo Vue e adicione o roteador a ela
-const app = createApp(App);
+const app = createApp(App).use(Antd);
 app.use(router);
 
 // Monte o aplicativo na div com id "app"

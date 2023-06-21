@@ -1,6 +1,6 @@
 import Home from './pages/Home.vue';
 import System from './pages/System.vue';
-import Login from './pages/Login.vue';
+import Profile from './pages/Profile.vue';
 import About from './pages/About.vue';
 
 const routes = [
@@ -15,9 +15,9 @@ const routes = [
     component: System
   },
   {
-    path: '/login',
-    name: 'Login',
-    component: Login
+    path: '/profile',
+    name: 'Profile',
+    component: Profile
   },
   {
     path: '/about',

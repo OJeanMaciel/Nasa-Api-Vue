@@ -1,6 +1,8 @@
 <script setup>
-  import logo from '../assets/logo.png';
-  import { UserOutlined } from '@ant-design/icons-vue';
+import logo from '../assets/logo.png';
+import { defineComponent } from 'vue';
+import { DownOutlined } from '@ant-design/icons-vue';
+
 
 </script>
 
@@ -19,8 +21,25 @@
           <router-link class="item" to="/about">Sobre</router-link>
         </li>
         <li>
-          <router-link class="item" to="/login">
-            <user-outlined />
+          <router-link class="item" to="/profile">
+            <a-dropdown>
+              <a class="ant-dropdown-link" @click.prevent>
+                <img class="userProfile" src="../../src/assets/astronauta2.png" alt="astronauta" />
+              </a>
+              <template #overlay>
+                <a-menu>
+                  <a-menu-item>
+                    <a href="javascript:;">1st menu item</a>
+                  </a-menu-item>
+                  <a-menu-item>
+                    <a href="javascript:;">2nd menu item</a>
+                  </a-menu-item>
+                  <a-menu-item>
+                    <a href="javascript:;">3rd menu item</a>
+                  </a-menu-item>
+                </a-menu>
+              </template>
+            </a-dropdown>
           </router-link>
         </li>
       </ul>
@@ -42,17 +61,25 @@ img {
   height: 82px;
 }
 
+.icon {
+  background-color: #15418c;
+  font-size: 25px;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  z-index: 1;
+}
+
 .min-height {
-    min-height: calc(100vh - 200px);
+  min-height: calc(100vh - 200px);
 }
 
 .start {
-    justify-content: flex-start;
+  justify-content: flex-start;
 }
 
 .column {
-    flex-direction: column;
-    justify-content: flex-start;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .list {
@@ -71,5 +98,12 @@ img {
 .item:hover {
   cursor: pointer;
   color: #ffbb33;
+}
+
+.userProfile {
+  width: 65px;
+  height: 60px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
 }
 </style>

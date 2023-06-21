@@ -69,7 +69,7 @@ img {
   display: flex;
   position: absolute;
   left: 2px;
-  top: 100px;
+  top: 120px;
 }
 
 </style>
