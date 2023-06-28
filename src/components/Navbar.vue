@@ -29,7 +29,9 @@ import { DownOutlined } from '@ant-design/icons-vue';
               <template #overlay>
                 <a-menu>
                   <a-menu-item>
-                    <a href="javascript:;">1st menu item</a>
+                    <router-link to="/profile">
+                      <p>Profile</p>
+                    </router-link>
                   </a-menu-item>
                   <a-menu-item>
                     <a href="javascript:;">2nd menu item</a>
